@@ -1,0 +1,268 @@
+.main {
+  flex: 1;
+  min-height: 100vh;
+  padding-bottom: 15vh;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  padding: 20px;
+  color: #585858;
+}
+.nav img {
+  width: 40px;
+  border-radius: 50%;
+}
+.nav p {
+  color: #343333;
+  font-size: 26px;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.greet {
+  margin: 40px 0px;
+  font-size: 54px;
+  color: #afb2b0;
+  font-weight: 600;
+  padding: 20px;
+}
+
+.greet span {
+  background: -webkit-linear-gradient(16deg, #2c59fc, #28ee32);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  height: 200px;
+  padding: 15px;
+  background-color: #d7dce2;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card img {
+  width: 35px;
+  padding: 5px;
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.card p {
+  color: #585858;
+  font-size: 17px;
+}
+
+.card:hover {
+  /* transform: scale(1.03); */
+  background-color: #c3d2e2;
+}
+
+.main-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 900px;
+  padding: 0px 20px;
+  margin: auto;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #d7dce2;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.search-box img {
+  width: 24px;
+  cursor: pointer;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.search-box div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bottom-info {
+  font-size: 13px;
+  margin: 15px auto;
+  text-align: center;
+  font-weight: 300;
+}
+
+.result{
+  padding: 0px 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar{
+  display: none;
+}
+
+.result-title{
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result img{
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-data{
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.loader{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loader hr{
+  border-radius: 4px;
+  border: none;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right, #9ac4fb, #c3ffc2, #9ac4fb);
+  background-size: 800px 50px;
+  height: 20px;
+  animation: loader 2s infinite linear;
+}
+
+@keyframes loader{
+  0%{
+    background-position: -800px 0px;
+  }
+  100%{
+    background-position: 800px 0px;
+  }
+}
+
+.result-data p{
+  font-size: 17px;
+  font-weight: 350;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .main {
+    width: 100%;
+  }
+  .nav p {
+    font-size: 24px;
+  }
+
+  .nav img{
+    width: 30px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure cards stay in a single line */
+    overflow-x: auto;
+  }
+  .cards::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .card {
+    width: 50vw; /* Adjust width as needed */
+    height: 25vh;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+  }
+  .greet {
+    margin: 30px 0px;
+    margin-top: 60px;
+    font-size: 58px;
+    padding: 15px;
+  }
+  result-title{
+    margin: 20px;
+    gap: 15px;
+  }
+  .result-data p, .result-title p{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .result img{
+    width: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    width: 100%;
+    padding-bottom: 10vh;
+    font-size: small;
+  }
+  .card{
+    width: 50vw;
+  }
+  .card p{
+    font-size: 14px;
+  }
+  .bottom-info {
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  .search-box input {
+    font-size: 12px;
+    padding: 5px;
+  }
+  .greet {
+    margin: 20px 0px;
+    margin-top: 40px;
+    font-size: 42px;
+    padding: 15px;
+  }
+  .result-data p, .result-title p{
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .result img{
+    width: 30px;
+  }
+}
+
+
