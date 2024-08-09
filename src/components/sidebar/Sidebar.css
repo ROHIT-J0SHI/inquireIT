@@ -71,3 +71,15 @@
         display: none;
     }
 }
+@media (max-height: 600px) {
+    .new-chat{
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+    .new-chat img{
+        width: 15px;
+    }
+    .recent{
+        font-size: 14px;
+    }
+}
